@@ -1,6 +1,6 @@
 {
     "name": "ui-overwatch-cli",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "CLI for the ui-overwatch library. Execute e2e tests for defined projects.",
     "keywords": [
         "e2e",
