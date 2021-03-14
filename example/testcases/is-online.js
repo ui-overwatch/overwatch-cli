@@ -6,7 +6,7 @@ module.exports = {
     environments: ['prod'],
     requireAuth: false,
     headless: true,
-    exec: async (project, page) => {
+    async exec(project, page) {
         await page.goto(project.url);
     },
 }

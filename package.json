@@ -20,7 +20,7 @@
     "author": "faebeee@gmail.com",
     "license": "ISC",
     "dependencies": {
-        "ui-overwatch": "^0.6.0",
+        "ui-overwatch": "^0.7.0",
         "yargs": "^16.2.0"
     }
 }
