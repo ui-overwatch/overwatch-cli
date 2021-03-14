@@ -11,11 +11,11 @@ CLI for the [ui-overwatch](https://github.com/ui-overwatch/overwatch) library. E
 
 ## Run
 
-    ui-overwatch run ./testcases/**/*.js ./projects/**/*.js
+    ui-overwatch run "./testcases/**/*.js" "./projects/**/*.js"
 
 CLI Output
 
-    ui-overwatch run ./example/testcases/**/*.js ./example/projects/**/*.js
+    ui-overwatch run "./example/testcases/**/*.js" "./example/projects/**/*.js"
 
     [14/03/2021 01:53:58] [INFO]    | Add reporter Console Reporter
     [14/03/2021 01:53:58] [INFO]    | Running 2 test case(s) on 1 project(s)
@@ -27,7 +27,7 @@ CLI Output
 
 In order to customize the output set the ENV variable `LOG_LEVEL` to a number between 0 and 4
     
-    LOG_LEVEL=4 ui-overwatch run ./testcases/**/*.js ./projects/**/*.js
+    LOG_LEVEL=4 ui-overwatch run "./testcases/**/*.js" "./projects/**/*.js"
     
     [14/03/2021 01:53:58] [INFO]    | Use loglevel DEBUG
     [14/03/2021 01:53:58] [INFO]    | Add reporter Console Reporter
@@ -54,7 +54,11 @@ In order to send the results of the testcases to a slack webhook, pass the webho
 
 Check out the [Doc](https://api.slack.com/messaging/webhooks) to see, how to enable webhooks for your slack instance.
 
-    ui-overwatch run ./testcases/**/*.js ./projects/**/*.js --slack-webhook=SLACK_WEBHOOK_URI
+    ui-overwatch run "./testcases/**/*.js" "./projects/**/*.js" --slack-webhook=SLACK_WEBHOOK_URI
+
+Slack message
+
+![Slack Message](https://github.com/ui-overwatch/overwatch/raw/master/assets/slack-output.png)
 
 ### DataDog
 To send the results to a datadog logging instance, pass the API Key via the `datadog-api-key` option.
