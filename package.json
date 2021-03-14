@@ -1,16 +1,26 @@
 {
-  "name": "ui-overwatch-cli",
-  "version": "0.0.1",
-  "description": "CLI for the ui-overwatch library. Execute e2e tests for defined projects.",
-  "keywords": ["e2e", "cli", "testing", "frontend", "ci"],
-  "main": "index.js",
-  "bin": {
-    "ui-overwatch": "./src/cli.js"
-  },
-  "author": "faebeee@gmail.com",
-  "license": "ISC",
-  "dependencies": {
-    "ui-overwatch": "^0.4.1",
-    "yargs": "^16.2.0"
-  }
+    "name": "ui-overwatch-cli",
+    "version": "0.0.1",
+    "description": "CLI for the ui-overwatch library. Execute e2e tests for defined projects.",
+    "keywords": [
+        "e2e",
+        "cli",
+        "testing",
+        "frontend",
+        "ci"
+    ],
+    "main": "index.js",
+    "bin": {
+        "ui-overwatch": "./src/cli.js"
+    },
+    "repository": {
+        "url": "https://github.com/ui-overwatch/overwatch-cli",
+        "type": "github"
+    },
+    "author": "faebeee@gmail.com",
+    "license": "ISC",
+    "dependencies": {
+        "ui-overwatch": "^0.5.1",
+        "yargs": "^16.2.0"
+    }
 }

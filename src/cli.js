@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-const yargs = require('yargs/yargs')
-const { hideBin } = require('yargs/helpers')
+const yargs = require('yargs/yargs');
+const { hideBin } = require('yargs/helpers');
+const { overwatch, addReporter, slackReporter, datadogReporter } = require('ui-overwatch');
 
 yargs(hideBin(process.argv))
     .command('run [testCases] [projects] [env]', 'Run test cases', (yargs) => {
@@ -21,8 +22,20 @@ yargs(hideBin(process.argv))
                 describe: 'Comma seperated list of environments',
                 default: null,
             })
-    }, async (argv) => {
-        console.log('run', argv);
+    }, async ({ testCases, projects, env, slackWebhook, datadogUri }) => {
+        slackWebhook && addReporter(slackReporter(slackWebhook));
+        datadogUri && addReporter(datadogReporter(datadogUri));
+        await overwatch(env?.split(','), projects, testCases);
+    })
+    .option('slack-webhook', {
+        alias: 's',
+        type: 'string',
+        description: 'Report results to a slack webhook',
+    })
+    .option('datadog-uri', {
+        alias: 'd',
+        type: 'string',
+        description: 'Report results to datadog',
     })
     .help()
     .argv
