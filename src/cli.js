@@ -22,7 +22,7 @@ yargs(hideBin(process.argv))
                 describe: 'Comma seperated list of environments',
                 default: null,
             })
-    }, async ({ testCases, projects, env, slackWebhook, datadogUri }) => {
+    }, async ({ testCases, projects, env, slackWebhook, datadogApiKey }) => {
         slackWebhook && addReporter(slackReporter(slackWebhook));
         datadogUri && addReporter(datadogReporter(datadogUri));
         await overwatch(env?.split(','), projects, testCases);
@@ -32,7 +32,7 @@ yargs(hideBin(process.argv))
         type: 'string',
         description: 'Report results to a slack webhook',
     })
-    .option('datadog-uri', {
+    .option('datadog-api-key', {
         alias: 'd',
         type: 'string',
         description: 'Report results to datadog',
