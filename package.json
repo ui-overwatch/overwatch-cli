@@ -1,14 +1,16 @@
 {
   "name": "ui-overwatch-cli",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "CLI for the ui-overwatch library. Execute e2e tests for defined projects.",
+  "keywords": ["e2e", "cli", "testing", "frontend", "ci"],
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "ui-overwatch": "./src/cli.js"
   },
-  "author": "",
+  "author": "faebeee@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "ui-overwatch": "^0.4.1"
+    "ui-overwatch": "^0.4.1",
+    "yargs": "^16.2.0"
   }
 }
